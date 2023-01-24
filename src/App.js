@@ -9,13 +9,12 @@ function App() {
   const [isValidColor, setIsValidColor] = useState(true);
   const [formColor, setFormColor] = useState(color);
 
-
   const handlerChangeColor = (newColor) => {
     setFormColor(newColor);
-    if (/^#[0-9A-F]{6}$/i.test(newColor)) {
+    if (newColor.length === 7 && /^#[0-9A-F]{6}$/i.test(newColor)) {
       setColor(newColor);
       setIsValidColor(true);
-    } else {
+    } else if(newColor.length === 7) {
       setIsValidColor(false);
     }
   };
@@ -23,7 +22,7 @@ function App() {
   return (
     <Background color={color}>
       <Form color={formColor} setColor={handlerChangeColor} />
-      <ColorRgb color={color} isValidColor={isValidColor} />
+      <ColorRgb color={formColor} isValidColor={isValidColor} />
     </Background>
   );
 }

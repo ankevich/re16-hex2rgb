@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const ColorRgb = ({ color, isValidColor }) => {
+  if (color.length !== 7) {
+    return <></>;
+  }
+
   if (!isValidColor) {
     return <Brick>Ошибка!</Brick>;
   }
