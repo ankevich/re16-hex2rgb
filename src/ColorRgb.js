@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-const ColorRgb = (props) => {
-  const { color } = props;
+const ColorRgb = ({ color }) => {
+  if (color.length !== 7 || color[0] !== "#") {
+    return <Brick>Ошибка!</Brick>;
+  }
+
   const rgb = color
     .replace("#", "")
     .match(/.{1,2}/g)

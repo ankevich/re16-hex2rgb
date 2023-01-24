@@ -25,7 +25,4 @@ const Background = styled.div`
   flex-direction: column;
 `;
 
-
-
-
 export default App;

@@ -6,9 +6,9 @@ const Form = ({ setColor, color }) => {
     setColor(event.target.value);
   };
   return (
-      <StyledForm>
-        <input value={color} onChange={handlerChangeColor} />
-      </StyledForm>
+    <StyledForm>
+      <input value={color} onChange={handlerChangeColor} />
+    </StyledForm>
   );
 };
 
@@ -17,7 +17,7 @@ const StyledForm = styled.form`
     width: 140px;
     height: 54px;
     border: 0;
-    
+
     margin-bottom: 5px;
     padding: 0 20px;
     font-size: 16px;
