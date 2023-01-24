@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const ColorRgb = ({ color }) => {
-  if (color.length !== 7 || color[0] !== "#") {
+const ColorRgb = ({ color, isValidColor }) => {
+  if (!isValidColor) {
     return <Brick>Ошибка!</Brick>;
   }
 

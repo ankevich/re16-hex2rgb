@@ -6,11 +6,24 @@ import React, { useState } from "react";
 
 function App() {
   const [color, setColor] = useState("#456389");
+  const [isValidColor, setIsValidColor] = useState(true);
+  const [formColor, setFormColor] = useState(color);
+
+
+  const handlerChangeColor = (newColor) => {
+    setFormColor(newColor);
+    if (/^#[0-9A-F]{6}$/i.test(newColor)) {
+      setColor(newColor);
+      setIsValidColor(true);
+    } else {
+      setIsValidColor(false);
+    }
+  };
 
   return (
     <Background color={color}>
-      <Form color={color} setColor={setColor} />
-      <ColorRgb color={color} />
+      <Form color={formColor} setColor={handlerChangeColor} />
+      <ColorRgb color={color} isValidColor={isValidColor} />
     </Background>
   );
 }
